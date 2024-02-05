@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    sea_battle
+{% endblock %}
+
+{% block content %}
+    {% if request.user.is_authenticated %}
+            <p style="text-align:center;">
+                <span>
+                    <a href="grounds" class="btn">играть</a>
+                </span>
+            </p>
+            {% for el in rule %}
+                <div class = 'rules'>
+                    <p><pre>{{el.Rule| safe}} </pre></p>
+                </div>
+            {% endfor %}
+    {% endif %}
+{% endblock %}
